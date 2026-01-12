@@ -1,0 +1,178 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/forms";
+@plugin '@tailwindcss/typography';
+@source '../node_modules/pliny';
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Core theme configuration */
+@theme {
+  /* Font families */
+  --font-serif: var(--font-lora), Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  /* Colors - Golden Luxe / Sacred Canvas Theme */
+  /* Primary: Copper (#b87333) based scale */
+  --color-primary-50: oklch(0.96 0.02 55);
+  --color-primary-100: oklch(0.92 0.04 55);
+  --color-primary-200: oklch(0.85 0.07 55);
+  --color-primary-300: oklch(0.75 0.10 55);
+  --color-primary-400: oklch(0.65 0.12 55);
+  --color-primary-500: oklch(0.58 0.13 55);   /* Copper #b87333 */
+  --color-primary-600: oklch(0.50 0.12 55);
+  --color-primary-700: oklch(0.42 0.10 55);
+  --color-primary-800: oklch(0.35 0.08 55);
+  --color-primary-900: oklch(0.28 0.06 55);
+  --color-primary-950: oklch(0.20 0.04 55);
+
+  /* Grays: Warm grays based on Alabaster */
+  --color-gray-50: oklch(0.96 0.008 80);      /* Alabaster #f2f0eb */
+  --color-gray-100: oklch(0.93 0.010 80);     /* Darker Alabaster #e8e4db */
+  --color-gray-200: oklch(0.88 0.012 80);
+  --color-gray-300: oklch(0.80 0.010 80);
+  --color-gray-400: oklch(0.65 0.008 80);     /* Battleship Gray #848482 */
+  --color-gray-500: oklch(0.50 0.006 80);
+  --color-gray-600: oklch(0.42 0.005 80);     /* Davy's Gray #555555 */
+  --color-gray-700: oklch(0.35 0.004 80);
+  --color-gray-800: oklch(0.25 0.003 80);
+  --color-gray-900: oklch(0.18 0.002 80);     /* Jet #222222 */
+  --color-gray-950: oklch(0.12 0.002 80);
+
+  /* Line heights */
+  --line-height-11: 2.75rem;
+  --line-height-12: 3rem;
+  --line-height-13: 3.25rem;
+  --line-height-14: 3.5rem;
+
+  /* Z-index values */
+  --z-60: 60;
+  --z-70: 70;
+  --z-80: 80;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  a,
+  button {
+    outline-color: var(--color-primary-500);
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid;
+    border-radius: var(--radius-sm);
+    outline-color: var(--color-primary-500);
+  }
+}
+
+@layer utilities {
+  .prose {
+    & a {
+      color: var(--color-primary-500);
+      &:hover {
+        color: var(--color-primary-600);
+      }
+      & code {
+        color: var(--color-primary-400);
+      }
+    }
+    & :where(h1, h2, h3) {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      letter-spacing: var(--tracking-tight);
+    }
+    & h3 {
+      font-weight: 600;
+    }
+    & :where(code):not(pre code) {
+      color: var(--color-indigo-500);
+    }
+  }
+
+  .prose-invert {
+    & a {
+      color: var(--color-primary-500);
+      &:hover {
+        color: var(--color-primary-400);
+      }
+      & code {
+        color: var(--color-primary-400);
+      }
+    }
+    & :where(h1, h2, h3, h4, h5, h6) {
+      color: var(--color-gray-100);
+    }
+  }
+}
+
+.task-list-item::before {
+  @apply hidden;
+}
+
+.task-list-item {
+  @apply list-none;
+}
+
+.footnotes {
+  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+}
+
+.data-footnote-backref {
+  @apply no-underline;
+}
+
+.csl-entry {
+  @apply my-5;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition:
+    background-color 600000s 0s,
+    color 600000s 0s;
+}
+
+.katex-display {
+  overflow: auto hidden;
+}
+
+.content-header-link {
+  opacity: 0;
+  margin-left: -24px;
+  padding-right: 4px;
+}
+
+.content-header:hover .content-header-link,
+.content-header-link:hover {
+  opacity: 1;
+}
+
+.linkicon {
+  display: inline-block;
+  vertical-align: middle;
+}
