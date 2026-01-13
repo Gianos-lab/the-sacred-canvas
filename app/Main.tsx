@@ -22,7 +22,7 @@ export default function Home({ posts }) {
             {posts.slice(0, MAX_DISPLAY).map((post) => {
               const { slug, date, title, summary, tags } = post
               return (
-                <li key={slug} className="py-12">
+                <li key={slug} className="py-8">
                   <article>
                     <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                       <dl>
@@ -31,8 +31,8 @@ export default function Home({ posts }) {
                           <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                         </dd>
                       </dl>
-                      <div className="space-y-5 xl:col-span-3">
-                        <div className="space-y-6">
+                      <div className="space-y-3 xl:col-span-3">
+                        <div className="space-y-2">
                           <div>
                             <h2 className="text-2xl leading-8 font-bold tracking-tight">
                               <Link
