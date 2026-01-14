@@ -15,7 +15,7 @@ export default function Home({ posts }) {
       <SectionContainer>
         <div id="world-log" className="scroll-mt-20 pt-12">
           <h2 className="mb-8 text-center text-2xl leading-9 font-bold tracking-tight text-gray-900 sm:text-3xl sm:leading-10 dark:text-gray-100">
-            Recent posts
+            Latest posts
           </h2>
           <ul className="divide-y divide-gray-200 dark:divide-gray-700">
             {!posts.length && 'No posts found.'}
@@ -81,7 +81,7 @@ export default function Home({ posts }) {
           </div>
         )}
         {siteMetadata.newsletter?.provider && (
-          <div className="flex items-center justify-center pt-4">
+          <div className="flex items-center justify-center py-12">
             <NewsletterForm />
           </div>
         )}

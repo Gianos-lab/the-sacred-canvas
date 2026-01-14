@@ -25,18 +25,21 @@
   --color-primary-900: oklch(0.28 0.06 55);
   --color-primary-950: oklch(0.20 0.04 55);
 
-  /* Grays: Warm grays based on Alabaster */
+  /* Grays: Warm light grays, neutral dark grays per WCAG best practices */
   --color-gray-50: oklch(0.96 0.008 80);      /* Alabaster #f2f0eb */
   --color-gray-100: oklch(0.93 0.010 80);     /* Darker Alabaster #e8e4db */
   --color-gray-200: oklch(0.88 0.012 80);
   --color-gray-300: oklch(0.80 0.010 80);
-  --color-gray-400: oklch(0.65 0.008 80);     /* Battleship Gray #848482 */
-  --color-gray-500: oklch(0.50 0.006 80);
-  --color-gray-600: oklch(0.42 0.005 80);     /* Davy's Gray #555555 */
-  --color-gray-700: oklch(0.35 0.004 80);
-  --color-gray-800: oklch(0.25 0.003 80);
-  --color-gray-900: oklch(0.18 0.002 80);     /* Jet #222222 */
-  --color-gray-950: oklch(0.12 0.002 80);
+  --color-gray-400: oklch(0.65 0.008 80);     /* Battleship Gray */
+  --color-gray-500: oklch(0.55 0.004 80);
+  --color-gray-600: oklch(0.45 0.003 80);
+  --color-gray-700: oklch(0.35 0.002 80);
+  --color-gray-800: oklch(0.25 0.001 80);     /* ~#303030 */
+  --color-gray-900: oklch(0.18 0.000 0);      /* ~#1e1e1e */
+  --color-gray-950: oklch(0.145 0.000 0);     /* #121212 - Material Design standard */
+
+  /* Canvas/Parchment - Hero background */
+  --color-canvas: oklch(0.965 0.012 80);     /* #f5f3ee - warm off-white */
 
   /* Line heights */
   --line-height-11: 2.75rem;

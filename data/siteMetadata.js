@@ -26,22 +26,8 @@ const siteMetadata = {
     // supports mailchimp, buttondown, convertkit, klaviyo, revue, emailoctopus, beehive
     provider: 'buttondown',
   },
-  comments: {
-    provider: 'giscus',
-    giscusConfig: {
-      repo: 'Gianos-lab/the-sacred-canvas',
-      repositoryId: 'R_kgDOQ2jjLg',
-      category: 'General',
-      categoryId: 'DIC_kwDOQ2jjLs4C03H_',
-      mapping: 'pathname',
-      reactions: '1',
-      metadata: '0',
-      theme: 'light',
-      darkTheme: 'transparent_dark',
-      themeURL: '',
-      lang: 'en',
-    },
-  },
+  // comments disabled - engagement via social media instead
+  comments: {},
   search: {
     provider: 'kbar',
     kbarConfig: {
